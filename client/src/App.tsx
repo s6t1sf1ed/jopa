@@ -5,6 +5,7 @@ import Dashboard from './Pages/Dashboard';
 import ProjectPage from './Pages/ProjectPage';
 import SettingsPage from './Pages/SettingsPage';
 import EditProject from '@/Pages/EditProject';
+import TasksPage from './Pages/TaskPage';
 
 const App = () => {
   const token = !!localStorage.getItem('token');
@@ -16,6 +17,7 @@ const App = () => {
       <Route path="/edit/:id" element={<EditProject />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/settings" element={<SettingsPage />} />
+      <Route path="/tasks" element={<TasksPage />} />
       <Route path="/dashboard" element={token ? <Dashboard /> : <Navigate to="/login" />} />
       <Route path="/project/:id" element={token ? <ProjectPage /> : <Navigate to="/login" />} />
       <Route path="*" element={<h1 className="text-white p-6">Страница не найдена</h1>} />
